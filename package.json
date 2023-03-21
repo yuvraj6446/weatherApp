@@ -1,7 +1,8 @@
 {
 
   "scripts": {
-    "start":"vite"
+    "start":"vite",
+    "build": "postcss main.css -o output.css"
   },
 
   "devDependencies": {
