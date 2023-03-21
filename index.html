@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="wrapper  flex flex-col  items-center ">
+     <img src="dafault-weather.jpeg"  class="" id="background">
+         <h1 class="mt-[20px] pointer-events-none select-none font-bold w-[200px]  text-[30px]" >Weather App</h1>
+    <div id="CardChanger  " class="w-[350px] gap-1  h-[50px] flex flex-col sm:flex-row justify-between items-center mt-[10px] mb-[10px]" >
+      
+    
+        <!-- your div -->
+        <div id="yourDiv" class="w-[150px] cursor-pointer select-none   relative text-center h-[30px] rounded">
+            <div class="yourDivShadow    open  absolute w-[100%] h-[100%]" > </div>
+                <p id="yourDivEle" class=" " >Your Weather</p>
+    
+        </div>
+         
+        <!-- search div -->
+        <div id="searchDiv" class=" relative w-[150px] text-center h-[30px] cursor-pointer select-none rounded">
+            <div class="searchDivShadow  absolute w-[100%] h-[100%]"  > </div>
+                <p id="searchDivEle" class=" " >Search Weather</p>
+    
+        </div>
+    
+    
+    </div>
+    
+    
+        <div id="upperCard  " class="flex  cursor-default   flex-col items-center w-[350px] justify-center">
+    
+           <!--  -->
+           <!-- here to put active initially -->
+           <!--  -->
+    <div id="SelfContainer" class="active w-[70%] sm:w-[100%]  hidden flex-col ">
+    
+      
+    
+      
+       <!--  -->
+    
+          <div id="selfWeatherUpper " class=" relative w-[]  flex flex-col justify-center items-center  h-[200px]">
+      
+    
+      <div id="selfShadow"  class="  h-[100%]  w-[100%] absolute ">
+    
+      </div>
+    
+      <!-- if no access grant -->
+      <div id="accessCont" class=" active hidden  flex-col items-center gap-[30px]">
+    
+        <img src="location.png" width="70px" height="70px" alt="">
+    
+        <button id="accessGrantButt" class="bg-black w-[150px] h-[30px] border-white-200 border-[1px] rounded  "  >ACCESS GRANT</button>
+    </div>
+    <!-- card of divs -->
+    
+    <!-- upper values -->
+    <div id="upperOfSelfCard" class=" hidden  flex-col  items-center ">
+          <div id="countryInfo" class="flex gap-[3px]">
+        <p id="cityName" >india</p>
+        <img id="cityFlag" class="w-[20px]" alt="not">
+    
+       </div>
+       <p id="description"> haze</p>
+       <img id="descImg" alt="img">
+       <p id="temp" ></p>
+            
+          </div>
+    
+       
+      </div>
+    <!-- lower divs -->
+    <!-- //////////////////////////////// -->
+    <div id="lowerPartOfUpper" class=" hidden flex-col sm:flex-row   space-y-[10px] items-center  -[100px]  mt-[20px]  justify-between   ">
+        <div id="windSpeed" class="flex w-[100%] h-[130px]  mt-[10px] sm:w-[30%] relative flex-col justify-center items-center" >
+            <div class="backOfdiv border-white-200 border-[1px] rounded opacity-80 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+                <img  alt="img" width="50px" height="50px" src="wind.png" >
+                <p>WINDSPEED</p>
+                <p id="windSpeedValue">33</p>
+                
+            </div>
+    
+            <div id="humidity"  class="flex w-[100%] h-[130px]   sm:w-[30%] relative flex-col justify-center items-center">
+                <div class="backOfdiv border-white-200 border-[1px] rounded opacity-80 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+    
+                <img  src="humidity.png" width="50px" height="50px">
+                <p>HUMIDITY</p>
+                <p id="humidityValue">33</p>
+            </div>
+    
+            <div id="clouds" class="flex flex-col w-[100%] h-[130px] sm:w-[30%] relative justify-center items-center" >
+                <div class="backOfdiv border-white-200 border-[1px] rounded opacity-70 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+    
+    
+                <img  alt="img" width="50px" height="50px" src="cloud.png">
+                <p>CLOUDS</p>
+                <p id="cloudsValue">33</p>
+            </div>
+    </div>
+    
+            
+    
+          
+             
+    
+        
+    
+    </div>
+    
+    
+    
+    
+    <!-- search weather -->
+    
+    <div id="searchForm" class=" mb-[300px]   hidden w-[70%] sm:w-[100%]  " >
+        <form  id="form" class=" font-bold flex w-[100%] justify-between" >
+    
+            <input id="cityInput" placeholder="Search for city..">
+            <button id="searchByInputButt" ><img src="search.png" class="w-[30px] pl-[8px] h-[25px]" alt=""></button>
+    
+        </form>
+    </div>
+    
+    
+    <div class=" w-[100%]  hidden flex-col   justify-center items-center " id="searchContainer">
+    <!-- have to                      $$$$$$$$ -->
+    
+     
+    
+        <div class="searchUpper h-[200px] flex justify-center items-center  relative w-[70%] sm:w-[100%]  ">
+    
+            <div class="searchUpperShadow h-[100%]  w-[100%] absolute">
+              <!-- this div for shadoww -->
+                
+            </div>
+    
+    
+            <!-- not found -->
+    
+    
+            <div id="notFound" class=" hidden  flex-col " >
+                <img src="not-found.png" class="w-[100px] h-[100px]">
+                <p>Not Found !</p>
+            </div>
+    
+    
+            <div class="searchUpperMain">
+                 <!-- loading -->
+         <div id="loadingCard" class=" hidden flex-col justify-around items-center" > 
+            <img src="loading.gif" width="120px" height="120px">
+            <p>Loading...</p>
+        </div>
+    
+       
+    <!-- weather detail -->
+        <div id="upperOfSearchCard" class="hidden justify-center items-center flex-col">
+            <div id="searchCountryInfo" class="flex gap-[3px]" >
+          <p  id="searchcityname" >india</p>
+          <img src="" id="searchcityflag" class="w-[20px] " alt="img">
+    
+         </div>
+         <p id="Serchdescription"> haze</p>
+         <img id="SerchdescImg" alt="img">
+         <p id="Serchtemp" >33</p>
+    
+    
+            </div>
+    
+        </div>
+    </div>
+    
+        <!-- lower search detail
+         -->
+    
+         <div class="mb-[100px]  searchLowerDivs  hidden flex-col sm:flex-row space-y-2 mt-[20px] w-[70%] sm:w-[100%]   justify-between  items-center " >     
+            <!-- class=" border-white-200 border-[1px] rounded opacity-80 bg-black  -z-[1] absolute  h-[100%] w-[100%]" -->
+    
+    
+    
+            
+    
+    
+    
+    
+            <div id="SerchwindSpeed" class="flex w-[100%] h-[130px]  mt-[10px] sm:w-[30%]  relative flex-col justify-center items-center"  >
+                <div class=" border-white-200  border-[1px] rounded opacity-70 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+    
+    
+          <img  alt="img" width="50px" src="wind.png" height="50px" >
+          <p id="" >WINDSPEED</p>
+          <p id="SerchwindSpeedValue">ss</p>
+      </div>
+    
+      <div id="Serchhumidity"  class="flex w-[100%] h-[130px]  mt-[10px] sm:w-[30%]  relative flex-col justify-center items-center"  >
+        <div class=" border-white-200  border-[1px] rounded opacity-70 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+    
+        <img  alt="img" src="humidity.png" width="50px" height="50px">
+          <p>HUMIDITY</p>
+          <p id="SerchhumidityValue">77</p>
+      </div>
+    
+    <!--  -->
+    
+    
+    <!--  -->
+    
+      <div id="Serchclouds"   class="flex w-[100%] h-[130px]  mt-[10px] sm:w-[30%]  relative flex-col justify-center items-center" >
+        <div class=" border-white-200  border-[1px] rounded opacity-70 bg-black  -z-[1] absolute  h-[100%] w-[100%]"></div>
+    
+        <img  alt="img" src="cloud.png"  width="50px" height="50px">
+          <p>CLOUDS</p>
+          <p id="SerchcloudsValue">88</p>
+      </div>
+         </div>
+    
+    
+      
+    
+    
+    
+     
+    
+    
+    </div>
+    
+    
+    
+        </div>
+    
+       
+    
+    
+    
+    
+    
+    
+    
+       
+    
+    
+    </div>
+    
+    <script src="script.js"></script>
+    </body>
+</html>

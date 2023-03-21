@@ -1,0 +1,142 @@
+*{
+    color: aliceblue;
+    box-sizing: border-box;
+    margin: 0;
+    /* overflow-x: hidden; */
+    
+    
+}
+body{
+    overflow-x: hidden;
+    
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#background{
+    /* position: absolute; */
+    
+    z-index: -1;
+    height: 100%;
+    /* max-width: 120%; */
+
+    width: 100%;
+    position: fixed;
+    
+    
+    
+    
+
+}
+.yourDivShadow.open ,.searchDivShadow.open{
+  z-index: -1;
+  opacity: 70%;
+  /* border-color: rgb(118, 69, 20); */
+  /* border-width: thick; */
+  border: solid;
+  border-width: 1px;
+  border-radius: 5px;
+    background-color: rgb(15, 14, 16);
+}
+
+
+.yourDivShadow,.searchDivShadow{
+    z-index: -1;
+    opacity: 40%;
+    /* border-color: rgb(118, 69, 20); */
+    /* border-width: thick; */
+    /* border: solid; */
+    /* border-width: 1px; */
+    border-radius: 5px;
+      background-color: rgb(15, 14, 16);
+  }
+
+
+
+
+#selfShadow
+{
+    z-index:-1;
+    opacity: 80%;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    background-color: rgb(14, 15, 15);
+}
+
+/* accsess grant */
+#accessCont.active{
+    display: flex;
+}
+
+#upperOfSelfCard.active,#loadingCard.active,#SelfContainer.active ,#lowerPartOfUpper.active{
+    display: flex;
+}
+/* search  start */
+
+.searchLowerDivs.active , #upperOfSearchCard.active,#searchContainer.active{
+    display: flex;
+}
+
+
+.searchUpperShadow{
+    z-index:-1;
+    opacity: 80%;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    background-color: rgb(14, 15, 15);
+
+}
+
+#searchForm.active{
+    display: flex;
+}
+
+
+#cityInput::placeholder{
+    color: rgb(29, 50, 69);
+
+}
+#cityInput::-webkit-input{
+    background-color: rgb(7, 3, 10);
+}
+#form{
+    display: flex;
+    width: 100%;
+    color: black;
+    
+    justify-content: space-between;
+    /* background-color: rgb(10, 13, 13);  */
+}
+#cityInput{
+    width: 85%;
+    border-color: aliceblue;
+    background-color: rgb(197, 200, 203);
+    opacity: 60%;
+    border-radius: 20px;
+    padding-left: 10px;
+    /* background-color: rgb(200, 214, 203); */
+}
+
+#searchByInputButt
+{
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    border: none;
+    padding: 1px;
+    background-color:rgb(13, 12, 12);
+
+}
+#notFound.active{
+    display:flex;
+}
